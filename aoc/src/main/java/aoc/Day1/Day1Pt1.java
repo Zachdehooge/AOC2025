@@ -31,15 +31,23 @@ public class Day1Pt1 {
 
             int i;
             String x = "";
+            int startingNum = 50;
+
+            int range = 100;
+            int pos;
 
             for (i = 0; i < direction.toArray().length; i++){
                 int testing = Integer.parseInt(number.get(i));
                 x = direction.get(i);
-                if (Objects.equals(x, "R")){
-                    System.out.print(x + testing + "\n");
+                if (Objects.equals(x, "R")) {
+                    startingNum = (startingNum + testing) % range;
                 } else {
-                    System.out.println(x + testing);
+                    startingNum = (startingNum - testing) % range;
                 }
+
+                if (startingNum < 0) startingNum += range;
+
+                System.out.println(startingNum);
             }
 
         } catch (IOException e) {
