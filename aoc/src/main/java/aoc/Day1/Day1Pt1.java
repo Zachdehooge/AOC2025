@@ -34,9 +34,9 @@ public class Day1Pt1 {
             int startingNum = 50;
 
             int range = 100;
-            int pos;
+            int foo = 0;
 
-            for (i = 0; i < direction.toArray().length; i++){
+            for (i = 0; i < direction.toArray().length; i++) {
                 int testing = Integer.parseInt(number.get(i));
                 x = direction.get(i);
                 if (Objects.equals(x, "R")) {
@@ -47,8 +47,13 @@ public class Day1Pt1 {
 
                 if (startingNum < 0) startingNum += range;
 
-                System.out.println(startingNum);
+                //System.out.println(startingNum);
+
+                if (startingNum == 0) {
+                    foo = foo + 1;
+                }
             }
+            System.out.println("Password = " + foo);
 
         } catch (IOException e) {
             e.printStackTrace();
