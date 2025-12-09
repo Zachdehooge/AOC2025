@@ -1,4 +1,4 @@
-package main.java.aoc.Day1.pt1;
+package main.java.aoc.Day1;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ public class Day1Pt1 {
 
         BufferedReader reader;
         try {
-            reader = new BufferedReader(new FileReader("aoc/src/main/java/aoc/Day1/pt1/input.txt"));
+            reader = new BufferedReader(new FileReader("aoc/src/main/java/aoc/Day1/input.txt"));
             String line = reader.readLine();
             while (line != null) {
                 //System.out.println(line);
