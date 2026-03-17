@@ -12,7 +12,7 @@ public class Day1Pt2 {
 
         BufferedReader reader;
         try {
-            reader = new BufferedReader(new FileReader("aoc/src/main/java/aoc/Day1/exampleinput.txt"));
+            reader = new BufferedReader(new FileReader("aoc/src/main/java/aoc/Day1/input.txt"));
             String line = reader.readLine();
             while (line != null) {
                 //System.out.println(line);
@@ -47,25 +47,81 @@ public class Day1Pt2 {
         for (i = 0; i < direction.toArray().length; i++) {
             int testing = Integer.parseInt(number.get(i));
             x = direction.get(i);
-            if (Objects.equals(x, "R")) {
-                startingNum = (startingNum + testing) % range;
-            } else {
-                startingNum = (startingNum - testing) % range;
-            }
+            var start = 0;
+            var end = 0;
 
-            if (startingNum < 0) startingNum += range;
+            // Right spin
+            if (Objects.equals(x, "R")) {
+
+                start = startingNum;
+                startingNum = (startingNum + testing) % range;
+
+                if (startingNum < 0) startingNum += range;
+                end = startingNum;
+
+                int boop;
+                boolean didItBoop = false;
+                if (testing > 100){
+                    boop = testing / 100;
+                    foo += boop;
+                    didItBoop = true;
+                }
+
+                System.out.println("R Start: " + start);
+                System.out.println("R End: " + end);
+
+                boolean zerocheck = false;
+                if (end < start & start != 0) {
+                    zerocheck = true;
+                    foo+=1;
+                }
+
+                if (startingNum == 0 & !zerocheck) {
+                    foo = foo + 1;
+                }
+
+                System.out.println("Did it pass 0: " + zerocheck);
+                System.out.println("Did it Boop?: " + didItBoop);
+                System.out.println();
+
+            // Left spin
+            } else if (Objects.equals(x, "L")) {
+                start = startingNum;
+                startingNum = (startingNum - testing) % range;
+
+                if (startingNum < 0) startingNum += range;
+                end = startingNum;
+
+                int boop;
+                boolean didItBoop = false;
+                if (testing > 100){
+                    boop = testing / 100;
+                    foo += boop;
+                    didItBoop = true;
+                }
+
+                System.out.println("L Start: " + start);
+                System.out.println("L End: " + end);
+
+                boolean zerocheck = false;
+                if (end > start & start != 0) {
+                    zerocheck = true;
+                    foo+=1;
+                }
+
+                if (startingNum == 0 & !zerocheck) {
+                    foo = foo + 1;
+                }
+
+                System.out.println("Did it pass 0: " + zerocheck);
+                System.out.println("Did it Boop?: " + didItBoop);
+                System.out.println();
+            }
 
             //System.out.println(startingNum);
 
-            /*
-            * If the number passes 0 - then it should be counted
-
-            TODO: Modify the below to determine if it passed 0. If it did, iterate by 1. This is in addition to the already existing functionality
-             */
-
-            if (startingNum == 0) {
-                foo = foo + 1;
-            }
+            System.out.println("Foo: " + foo);
+            System.out.println();
         }
         return foo;
     }
