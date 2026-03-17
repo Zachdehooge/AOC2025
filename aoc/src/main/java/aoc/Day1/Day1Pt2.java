@@ -59,12 +59,12 @@ public class Day1Pt2 {
                 if (startingNum < 0) startingNum += range;
                 end = startingNum;
 
-                int boop;
-                boolean didItBoop = false;
+                int timesPassedZero;
+                boolean timesPassedZeroDebug = false;
                 if (testing > 100){
-                    boop = testing / 100;
-                    foo += boop;
-                    didItBoop = true;
+                    timesPassedZero = testing / 100;
+                    foo += timesPassedZero;
+                    timesPassedZeroDebug = true;
                 }
 
                 System.out.println("R Start: " + start);
@@ -81,7 +81,7 @@ public class Day1Pt2 {
                 }
 
                 System.out.println("Did it pass 0: " + zerocheck);
-                System.out.println("Did it Boop?: " + didItBoop);
+                System.out.println("Did it timesPassedZero?: " + timesPassedZeroDebug);
                 System.out.println();
 
             // Left spin
@@ -92,12 +92,12 @@ public class Day1Pt2 {
                 if (startingNum < 0) startingNum += range;
                 end = startingNum;
 
-                int boop;
-                boolean didItBoop = false;
+                int timesPassedZero;
+                boolean timesPassedZeroDebug = false;
                 if (testing > 100){
-                    boop = testing / 100;
-                    foo += boop;
-                    didItBoop = true;
+                    timesPassedZero = testing / 100;
+                    foo += timesPassedZero;
+                    timesPassedZeroDebug = true;
                 }
 
                 System.out.println("L Start: " + start);
@@ -114,7 +114,7 @@ public class Day1Pt2 {
                 }
 
                 System.out.println("Did it pass 0: " + zerocheck);
-                System.out.println("Did it Boop?: " + didItBoop);
+                System.out.println("Did it timesPassedZero?: " + timesPassedZeroDebug);
                 System.out.println();
             }
 
