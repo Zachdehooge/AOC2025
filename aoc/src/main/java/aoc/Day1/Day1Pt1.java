@@ -63,6 +63,5 @@ public class Day1Pt1 {
         }
         return foo;
     }
-
 }
 
